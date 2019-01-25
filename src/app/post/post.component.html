@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{post.title}}</mat-card-title>
+    <mat-card-subtitle>{{post.owner.name}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img [src]="post.imageUrl" class="legion-post-image" mat-card-image>
+
+  <mat-card-content>
+    {{post.content}}
+  </mat-card-content>
+
+  <mat-card-footer>
+    Empänger: {{post.receiver.name}}
+  </mat-card-footer>
+
+</mat-card>
+

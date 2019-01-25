@@ -1,0 +1,42 @@
+<!--<button mat-raised-button color="primary"
+        [disabled]="!newPostForm.valid" (click)="timeLine.deleteAllPosts()">
+  Delete All
+</button>-->
+
+<mat-accordion>
+  <mat-expansion-panel [(expanded)]="timeLine.postCreatePanelExpanded">
+
+    <mat-expansion-panel-header>
+      Create new Post
+    </mat-expansion-panel-header>
+
+    <app-post-create [timeLine]="timeLine"></app-post-create>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div *ngFor="let postVariable of timeLine.posts">
+
+  <mat-grid-list cols="10" rowHeight="400px">
+
+    <mat-grid-tile colspan="2">
+      <app-post [post]="postVariable"></app-post>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+      <app-comment-create [post]="postVariable"></app-comment-create>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="6">
+
+      <div class="legion-comment-container">
+        <div class="legion-comment-element" *ngFor="let commentVariable of postVariable.comments">
+          <app-comment [comment]="commentVariable"></app-comment>
+        </div>
+      </div>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+

@@ -1,0 +1,40 @@
+<form #newPostForm="ngForm">
+  <p>
+
+    <mat-form-field>
+      <input [(ngModel)]="newPost.title" matInput maxlength="12"
+             name="title"
+             placeholder="Titel"
+             required>
+      <mat-hint align="start"><strong>Please as short as possible</strong></mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+
+    <mat-form-field>
+      <textarea [(ngModel)]="newPost.content" matInput name="content" placeholder="Post"></textarea>
+    </mat-form-field>
+  </p>
+  <p>
+
+    <mat-form-field>
+      <mat-select [(ngModel)]="newPost.receiver" name="receiver" placeholder="Empfänger">
+        <mat-option *ngFor="let user of userService.users" [value]="user">
+          {{user.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+
+    <mat-form-field>
+      <textarea [(ngModel)]="newPost.imageUrl" matInput name="image" placeholder="Bild"></textarea>
+    </mat-form-field>
+  </p>
+  <p>
+
+    <button (click)="timeLine.addPost(newPost)" [disabled]="!newPostForm.valid" color="primary"
+            mat-raised-button>Add Post
+    </button>
+  </p>
+</form>

@@ -1,0 +1,24 @@
+<form #newCommentForm="ngForm" class="example-form">
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="newComment.title" matInput maxlength="12"
+             name="title"
+             placeholder="Titel"
+             required>
+      <mat-hint align="start"><strong>Please as short as possible</strong></mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+
+
+    <mat-form-field class="example-full-width">
+      <textarea [(ngModel)]="newComment.content" matInput name="content" placeholder="Comment"></textarea>
+    </mat-form-field>
+
+  </p>
+
+  <button (click)="post.addComment(newComment)" [disabled]="!newCommentForm.valid" color="primary"
+          mat-raised-button>Add Comment
+  </button>
+</form>

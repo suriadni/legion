@@ -1,0 +1,29 @@
+.legion-post {
+  margin: 15px;
+  width: 300px;
+  word-wrap: break-word;
+
+}
+
+.legion-post-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.legion-post-header {
+  background-color: #8A2BE2;
+  width: auto;
+  margin: -5px -20px 15px -20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+}
+
+.legion-post-card {
+  color: gold;
+}
+
+.legion-post-image {
+  background-size: cover;
+}
